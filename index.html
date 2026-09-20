@@ -1,0 +1,1141 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sanplei - Tienda Variedades</title>
+
+    <!-- Meta Etiquetas Open Graph para Redes Sociales (WhatsApp, Facebook, Instagram) -->
+    <meta property="وtitle" content="Sanplei - Tienda Variedades">
+    <meta property="og:title" content="Tienda Variedades SANPLEI | De Todo Cerca a tu Hogar">
+    <meta property="og:description" content="¡Bienvenidos a SANPLEI! Todo lo que buscas para ti y los que amas en un solo lugar. Precios increíbles y pedidos fáciles por WhatsApp.">
+    <meta property="og:image" content="https://sanplei.com/assets/img/logo-sanplei.jpeg">
+    <meta property="og:url" content="https://sanplei.com">
+    <meta property="og:type" content="website">
+
+    <!-- Meta Etiquetas para Twitter / Tarjetas (Opcional pero recomendado) -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Tienda Variedades SANPLEI">
+    <meta name="twitter:description" content="Todo lo que buscas para ti en un solo lugar. ¡Escríbenos y descubre nuestros precios irresistibles!">
+    <meta name="twitter:image" content="https://sanplei.com/assets/img/logo-sanplei-frase.png">
+        <link rel="stylesheet" href="style.css">
+
+<!-- Favicon clásico para navegadores -->
+    <link rel="icon" type="image/x-icon" href="assets/favicon/favicon.ico">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon/favicon-16x16.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32x32.png">
+
+    <!-- Icono para dispositivos Apple (iPhone/iPad) -->
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon/apple-touch-icon.png">
+
+    <!-- Iconos para dispositivos Android y PWA -->
+    <link rel="icon" type="image/png" sizes="192x192" href="assets/favicon/android-chrome-192x192.png">
+    <link rel="icon" type="image/png" sizes="512x512" href="assets/favicon/android-chrome-512x512.png">
+    <!-- Enlace al Web Manifest -->
+    <link rel="manifest" href="assets/favicon/site.webmanifest">
+
+
+</head>
+<body>
+
+ 
+  <!-- Header con Banner, Logo y Buscador -->
+<header class="store-hero">
+    <!-- Imagen de Portada / Banner de Fondo -->
+    <div class="hero-banner">
+        <!-- Buscador integrado en la esquina superior de la portada -->
+        <div class="search-box">
+            <svg class="search-icon" xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+            <input type="text" id="searchInput" placeholder="Buscar productos..." oninput="filtrarProductos()">
+        </div>
+    </div>
+
+   <!-- Contenido inferior del header -->
+<div class="hero-profile-container" style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 20px;">
+    
+    <!-- Lado Izquierdo: Logo + Título y Botón WhatsApp alineados al centro vertical -->
+    <div style="display: flex; align-items: center; gap: 15px;">
+        <div class="store-logo-wrapper">
+            <img src="assets/img/logo-sanplei.png" alt="Logo sanplei oficial" class="store-logo" style="width: 75px; height: 75px; border-radius: 50%; object-fit: cover;">
+        </div>
+        <div class="title-badge-row" style="display: flex; flex-direction: column; gap: 6px;">
+            <h1 class="store-title" style="font-family: 'Montserrat', sans-serif; font-size: 1.25rem; margin: 0; color: #ffffff;">Tienda SANPLEI</h1>
+            <span class="whatsapp-badge" style="background: white; color: #075e54; padding: 4px 10px; border-radius: 15px; font-size: 0.8rem; font-weight: bold; width: fit-content; display: inline-flex; align-items: center; gap: 5px;">🟢WhatsApp</span>
+        </div>
+    </div>
+ 
+    <!-- Lado Derecho: Todo el texto de bienvenida alineado a la izquierda -->
+    <div class="store-info-text" style="text-align: left; flex: 1; min-width: 280px;">
+        <p class="store-description" style="font-family: 'Montserrat', sans-serif; font-size: 14px; font-weight: 500; line-height: 1.4; color: #ffffff; margin: 0;">
+            ¡Bienvenidos a SANPLEI! ✨Todo lo que buscas para ti en un solo lugar. <span style="font-weight: bold; color: #ffe600;"><br>🚚 ¡Entrega gratis en Palermo, Manizales por compras mayores a $99.900!</span><br>
+            <span style="font-weight: bold;">¡Escríbenos ahora y descubre nuestros precios irresistibles!</span> 🛒💬📱 
+            <a href="https://wa.me/573332464187?text=Hola,%20estoy%20interesado%20en%20los%20productos%20de%20SANBREI" target="_blank" style="color: #ffffff; font-weight: bold; text-decoration: underline;">333 24 64 187</a><br>
+            📧 <a href="mailto:contacto@sanplei.com" style="color: #ffffff; text-decoration: underline;">contacto@sanplei.com</a> | <a href="mailto:ventas@sanplei.com" style="color: #ffffff; text-decoration: underline;">ventas@sanplei.com</a>
+        </p>
+    </div>
+
+</div>
+        </div>
+    </div>
+</header>
+
+    <!-- Botón Flotante del Carrito -->
+    <button class="cart-floating-btn" onclick="toggleCart()">
+        🛒 Carrito <span class="cart-count" id="cartCount">0</span>
+    </button>
+
+<!-- Categorías -->
+    <nav class="categories-container">
+        <div class="category-item" onclick="filtrarCategoria('todo')">
+            <div class="category-circle"><img src="assets/img/logo-sanplei.png" alt="Todo"></div>
+            <span class="category-name">Todo</span>
+        </div>
+        <div class="category-item" onclick="filtrarCategoria('mascotas')">
+            <div class="category-circle"><img src="assets/img/quitamotasrecargable/quitamotasrecargable.png" alt="Mascotas"></div>
+            <span class="category-name">Mascotas</span>
+        </div>
+        <div class="category-item" onclick="filtrarCategoria('tecnologia')">
+            <div class="category-circle"><img src="assets/img/tablet16pulgadas/tablet161.webp" alt="Tecnología"></div>
+            <span class="category-name">Tecnología</span>
+        </div>
+        <div class="category-item" onclick="filtrarCategoria('hogar')">
+            <div class="category-circle"><img src="assets/img/molino-cafe/molino-cafe1.png" alt="Hogar"></div>
+            <span class="category-name">Hogar</span>
+        </div>
+        <div class="category-item" onclick="filtrarCategoria('belleza')">
+            <div class="category-circle"><img src="assets/img/plantilla3cms/plantilla3cms.png" alt="Belleza"></div>
+            <span class="category-name">Belleza</span>
+        </div>
+         <div class="category-item" onclick="filtrarCategoria('juguetes')">
+            <div class="category-circle"><img src="assets/img/nuevos/pelota-antiestres-luces.jpeg" alt="Juguetes"></div>
+            <span class="category-name">Juguetes</span>
+        </div>
+        <div class="category-item" onclick="filtrarCategoria('papeleria')">
+            <div class="category-circle"><img src="assets/img/nuevos/marcadores.jpg" alt="Juguetes"></div>
+            <span class="category-name">papeleria</span>
+        </div>
+    </nav>
+
+    <!-- Grilla de Productos -->
+    <main class="products-grid">
+     
+        
+        
+<!-- PRODUCTO 1 nuevo PELOTA SENSORIAL LUZ -->
+<div class="product-card" data-category="juguetes">
+    <div class="product-image-container" onclick="openModal([
+       'assets/img/nuevos/pelota-antiestres-luces.jpeg', 
+        'assets/img/nuevos/pelota-antiestres-luces1.jpeg'
+            
+    ], 'Pelota sensorial con luces | Antiestrés', 9900, 
+    '¿Sientes que el estrés del día te supera y necesitas un respiro? Relájate al instante con la Pelota Sensorial Antiestrés con Luz. Está diseñada para liberar tensiones de forma divertida; basta con presionarla para ver cómo brillan sus luces internas y sentir su textura terapéutica. Es el accesorio perfecto para tener en el escritorio, la oficina o consentir a los más pequeños<br><br><b>¡Haz que el estrés sea divertido hoy!</b>')">
+        <img src="assets/img/nuevos/pelota-antiestres-luces.jpeg" alt="Tapete Atrapa Arena">
+    </div>
+    <div class="product-info">
+        <h3 class="product-title">PELOTAS SENSORIAL CON LUZ - ANTIESTRÉS</h3>
+        <span class="old-price">COP 12.900</span>
+        <div class="product-price">COP 9.900</div>
+        <button class="btn-details" onclick="openModal([
+            'assets/img/nuevos/pelota-antiestres-luces.jpeg', 
+            'assets/img/nuevos/pelota-antiestres-luces1.jpeg' 
+        ], 'Pelota sensorial con luces | Antiestrés', 9900, '¿Sientes que el estrés del día te supera y necesitas un respiro? Relájate al instante con la Pelota Sensorial Antiestrés con Luz. Está diseñada para liberar tensiones de forma divertida; basta con presionarla para ver cómo brillan sus luces internas y sentir su textura terapéutica. Es el accesorio perfecto para tener en el escritorio, la oficina o consentir a los más pequeños<br><br><b>¡Haz que el estrés sea divertido hoy!</b>')">Ver Detalles</button>
+    </div>
+</div>
+
+
+
+
+
+ 
+<!-- PRODUCTO 2 nuevo CUADROS 5D-->
+<div class="product-card" data-category="juguetes">
+    <div class="product-image-container" onclick="openModal([
+       'assets/img/nuevos/cuadros.jpg', 
+        
+            
+    ], 'kit de cuadro | Pintura Diamante 5D', 14900, 
+    '¿Sabías que estos pequeños lienzos adhesivos vienen impresos con guías numéricas para que los niños puedan colocar brillantes gemas de resina paso a paso, ayudándoles a desarrollar su motricidad fina y concentración mientras crean un tierno personaje brillante estilo kawaii que ya viene listo en su propio marco para colgar?<br><br><b>¡Haz que el estrés sea divertido hoy!</b>')">
+        <img src="assets/img/nuevos/cuadros.jpg" alt="Tapete Atrapa Arena">
+    </div>
+    <div class="product-info">
+        <h3 class="product-title">CUADROS KIT PINTURA - DIAMANTE 5D</h3>
+        <span class="old-price">COP 19.900</span>
+        <div class="product-price">COP 14.900</div>
+        <button class="btn-details" onclick="openModal([
+             'assets/img/nuevos/cuadros.jpg', 
+             
+        ], 'kit de cuadro | Pintura Diamante 5D', 14900,  '¿Sabías que estos pequeños lienzos adhesivos vienen impresos con guías numéricas para que los niños puedan colocar brillantes gemas de resina paso a paso, ayudándoles a desarrollar su motricidad fina y concentración mientras crean un tierno personaje brillante estilo kawaii que ya viene listo en su propio marco para colgar?<br><br><b>¡Haz que el estrés sea divertido hoy!</b>')">Ver Detalles</button>
+    </div>
+</div>
+
+
+<!-- PRODUCTO 3 nuevo Cepillo Gatos-->
+<div class="product-card" data-category="mascotas">
+    <div class="product-image-container" onclick="openModal([
+       'assets/img/nuevos/cepillo-gato.jpeg', 
+        
+            
+    ], 'Cepillo Vapor Mascotas | 3 en 1', 14900, 
+       '¿Quieres que el pelaje de tu mascota luzca increíble sin lidiar con nudos ni estrés?Este innovador cepillo de vapor 3 en 1 para mascotas es la solución definitiva para el aseo en casa. Gracias a su sistema de rociado eléctrico, ablanda la suciedad y elimina el pelo suelto de forma rápida y sin tirones. Sus cerdas suaves de silicona ofrecen un masaje relajante que mejora la circulación, mientras que su diseño recargable por USB te garantiza total comodidad en cada pasada. ¡Un spa completo en la palma de tu mano!<br><br><b>¡Consigue el tuyo hoy mismo y consiente a tu mascota como se merece!</b>')">
+        <img src="assets/img/nuevos/cepillo-gato.jpeg" alt="Tapete Atrapa Arena">
+    </div>
+    <div class="product-info">
+        <h3 class="product-title">CEPILLO VAPOR MASCOTAS - 3 EN 1 </h3>
+        <span class="old-price">COP 19.900</span>
+        <div class="product-price">COP 14.900</div>
+        <button class="btn-details" onclick="openModal([
+             'assets/img/nuevos/cepillo-gato.jpeg',  
+             
+        ], 'Cepillo Vapor Mascotas | 3 en 1', 14900, '¿Quieres que el pelaje de tu mascota luzca increíble sin lidiar con nudos ni estrés?Este innovador cepillo de vapor 3 en 1 para mascotas es la solución definitiva para el aseo en casa. Gracias a su sistema de rociado eléctrico, ablanda la suciedad y elimina el pelo suelto de forma rápida y sin tirones. Sus cerdas suaves de silicona ofrecen un masaje relajante que mejora la circulación, mientras que su diseño recargable por USB te garantiza total comodidad en cada pasada. ¡Un spa completo en la palma de tu mano!<br><br><b>¡Consigue el tuyo hoy mismo y consiente a tu mascota como se merece!</b>')">Ver Detalles</button>
+    </div>
+</div>
+
+
+<!-- PRODUCTO 4 nuevo OSO y DINO SLIME -->
+<div class="product-card" data-category="juguetes">
+    <div class="product-image-container" onclick="openModal([
+       'assets/img/nuevos/slime-oso.jpeg', 
+       'assets/img/nuevos/slime-oso1.jpeg',  
+        
+            
+    ], 'SLIME | Ositos y Dinos', 8900, 
+    'Los Ositos Slime Antiestrés son la mezcla perfecta de ternura y diversión! Estos adorables recipientes con forma de osito vienen llenos de un slime brillante y elástico de colores vibrantes. Es el juguete perfecto para estimular la creatividad, mejorar la concentración y liberar tensiones de forma segura y súper entretenida.<br><br><b>¡Estimula el cerebro y el juego hoy!</b>')">
+        <img src="assets/img/nuevos/slime-oso.jpeg" alt="SLIME OSO Y DINOSAURIO">
+    </div>
+    <div class="product-info">
+        <h3 class="product-title">SLIME OSITOS Y DINOSAUROS</h3>
+        <span class="old-price">COP 11.900</span>
+        <div class="product-price">COP 8.900</div>
+        <button class="btn-details" onclick="openModal([
+             'assets/img/nuevos/slime-oso.jpeg',  
+             'assets/img/nuevos/slime-oso1.jpeg',  
+             
+        ],  'SLIME | Ositos y Dinos', 8900, 'Los Ositos Slime Antiestrés son la mezcla perfecta de ternura y diversión! Estos adorables recipientes con forma de osito vienen llenos de un slime brillante y elástico de colores vibrantes. Es el juguete perfecto para estimular la creatividad, mejorar la concentración y liberar tensiones de forma segura y súper entretenida.<br><br><b>¡Estimula el cerebro y el juego hoy!</b>')">Ver Detalles</button>
+    </div>
+</div>
+
+<!-- PRODUCTO 5 nuevo tapete-->
+<div class="product-card" data-category="hogar">
+    <div class="product-image-container" onclick="openModal([
+       'assets/img/nuevos/tapete.jpeg'
+        
+            
+    ], 'Tapete de baño | Antideslizante', 14900, 
+   '¿Preocupado por los resbalones y caídas en la ducha? Protege a tu familia y convierte tu baño en un espacio 100% seguro con nuestro Tapete Antideslizante con Ventosas de Alta Succión.<br><br><b>¡Asegura tus pasos hoy al salir de la ducha!</b>')">
+        <img src="assets/img/nuevos/tapete.jpeg"  alt="Tapete Atrapa Arena">
+    </div>
+    <div class="product-info">
+        <h3 class="product-title">TAPETE ANTIDESLIZANTE - BAÑO</h3>
+        <span class="old-price">COP 19.900</span>
+        <div class="product-price">COP 14.900</div>
+        <button class="btn-details" onclick="openModal([
+             'assets/img/nuevos/tapete.jpeg' 
+             
+        ],  'SLIME | Ositos y Dinos', 14900,'¿Preocupado por los resbalones y caídas en la ducha? Protege a tu familia y convierte tu baño en un espacio 100% seguro con nuestro Tapete Antideslizante con Ventosas de Alta Succión.<br><br><b>¡Asegura tus pasos hoy al salir de la ducha!</b>')">Ver Detalles</button>
+    </div>
+</div>
+
+<!-- PRODUCTO 6 gorila plastina-->
+<div class="product-card" data-category="juguetes">
+    <div class="product-image-container" onclick="openModal([
+       'assets/img/nuevos/gorila-plastilina.jpeg', 
+        
+            
+    ], 'Squishy | Gorila estirable', 14900, 
+ '💡 ¿Estrés acumulado en el día?Libera toda la tensión con este divertido gorila gigante elástico; puedes estirarlo, golpearlo y moldearlo a tu gusto, ya que siempre recupera su forma original gracias a su material ultra resistente<br><br><b>¡Aplástalo, estíralo y recupera tu calma hoy mismo!</b>')">
+        <img src="assets/img/nuevos/gorila-plastilina.jpeg" alt="Tapete Atrapa Arena">
+    </div>
+    <div class="product-info">
+        <h3 class="product-title">SQUISHY - GORILA ESTIRABLE</h3>
+        <span class="old-price">COP 19.900</span>
+        <div class="product-price">COP 14.900</div>
+        <button class="btn-details" onclick="openModal([
+             'assets/img/nuevos/gorila-plastilina.jpeg' 
+             
+        ], 'Squishy | Gorila estirable', 14900, '¿Buscas una actividad divertida que aleje a tus hijos de las pantallas por un buen rato? 🎨Este set de foamy moldeable incluye 12 colores vibrantes y herramientas para que imaginen y creen sin límites. Lo mejor de todo es que es súper suave, no mancha las manos y se seca al aire sin necesidad de horno. ¡Diversión limpia y creativa para toda la familia! ✨<br><br><b>¡Aplástalo, estíralo y recupera tu calma hoy mismo!</b>')">Ver Detalles</button>
+    </div>
+</div>
+
+
+
+
+<!-- PRODUCTO 7 KIT FOAMY MOLDEABLE -->
+<div class="product-card" data-category="juguetes">
+    <div class="product-image-container" onclick="openModal([
+       'assets/img/nuevos/polvo.jpg', 
+        
+            
+    ], 'Kit Foamy moldeable', 29900, 
+'¿Buscas una actividad divertida que aleje a tus hijos de las pantallas por un buen rato? 🎨Este set de foamy moldeable incluye 12 colores vibrantes y herramientas para que imaginen y creen sin límites. Lo mejor de todo es que es súper suave, no mancha las manos y se seca al aire sin necesidad de horno. ¡Diversión limpia y creativa para toda la familia! ✨<br><br><b>¡Encuentra una actividad de inspiración y paz hoy mismo!</b>')">
+
+        <img src="assets/img/nuevos/polvo.jpg" alt="Tapete Atrapa Arena">
+    </div>
+    <div class="product-info">
+        <h3 class="product-title">KIT FOAMY MOLDEABLE</h3>
+        <span class="old-price">COP 39.900</span>
+        <div class="product-price">COP 29.900</div>
+        <button class="btn-details" onclick="openModal([
+             'assets/img/nuevos/polvo.jpg' 
+             
+        ], 'Kit Foamy Moldeable', 29900, '¿Buscas una actividad divertida que aleje a tus hijos de las pantallas por un buen rato? 🎨Este set de foamy moldeable incluye 12 colores vibrantes y herramientas para que imaginen y creen sin límites. Lo mejor de todo es que es súper suave, no mancha las manos y se seca al aire sin necesidad de horno. ¡Diversión limpia y creativa para toda la familia! ✨<br><br><b>¡Encuentra una actividad de inspiración y paz hoy mismo!</b>')">Ver Detalles</button>
+    </div>
+</div>
+
+
+
+<!-- PRODUCTO 8 CARTUCHERA GLITTER -->
+<div class="product-card" data-category="papeleria">
+    <div class="product-image-container" onclick="openModal([
+       'assets/img/nuevos/cartucheras.jpeg', 
+        
+            
+    ], 'Cartuchera Glitter Mágico', 24900, 
+'¿Cansada de las cartucheras aburridas que no combinan con tu estilo?✨<br><br><b>¡Resalta tu brillo hoy mismo!</b>')">
+
+        <img src="assets/img/nuevos/cartucheras.jpeg" alt="Tapete Atrapa Arena">
+    </div>
+    <div class="product-info">
+        <h3 class="product-title">CARTUCHERA GLITTER MÁGICO</h3>
+        <span class="old-price">COP 29.900</span>
+        <div class="product-price">COP 24.900</div>
+        <button class="btn-details" onclick="openModal([
+             'assets/img/nuevos/cartucheras.jpeg' 
+             
+        ], 'Kit Foamy Moldeable', 24900, '¿Cansada de las cartucheras aburridas que no combinan con tu estilo?✨<br><br><b>¡Resalta tu brillo hoy mismo!</b>')">Ver Detalles</button>
+    </div>
+</div>
+
+
+
+
+<!-- PRODUCTO 9 FOAMY LIGERO gomas -->
+<div class="product-card" data-category="juguetes">
+    <div class="product-image-container" onclick="openModal([
+       'assets/img/nuevos/gomas.jpg', 
+        
+            
+    ], 'Cartuchera Glitter Mágico', 7900, 
+'¿Quéres desarrollar la psicomitricidad de tu niño?✨<br><br><b>¡Antiestrés natural!</b>')">
+
+        <img src="assets/img/nuevos/gomas.jpg" alt="Tapete Atrapa Arena">
+    </div>
+    <div class="product-info">
+        <h3 class="product-title">NUBE FOAMY LIGERO</h3>
+        <span class="old-price">COP 9.900</span>
+        <div class="product-price">COP 7.900</div>
+        <button class="btn-details" onclick="openModal([
+             'assets/img/nuevos/gomas.jpg' 
+             
+        ], '¿Quéres desarrollar la psicomitricidad de tu niño?✨<br><br><b>¡Antiestrés natural!</b>')">Ver Detalles</button>
+    </div>
+</div>
+
+
+
+
+<!-- PRODUCTO 10 BURBUJERO -->
+<div class="product-card" data-category="juguetes">
+    <div class="product-image-container" onclick="openModal([
+       'assets/img/nuevos/burbujero.jpeg', 
+        
+            
+    ], 'Burbujero infantil bíberon silbato', 9900, 
+       '¿Quieres vibrar y jugar en tus fiestas?✨<br><br><b>¡haz magia en el aire hoy mismo!</b>')">
+
+
+        <img src="assets/img/nuevos/burbujero.jpeg" alt="Tapete Atrapa Arena">
+    </div>
+    <div class="product-info">
+        <h3 class="product-title">BURBUJERO INFANTIL BIBERON SILBATO</h3>
+        <span class="old-price">COP 11.900</span>
+        <div class="product-price">COP 9.900</div>
+        <button class="btn-details" onclick="openModal([
+             'assets/img/nuevos/burbujero.jpeg' 
+             
+        ], 'Burbujero infantil bíberon silbato', 9900, '¿Quieres vibrar y jugar en tus fiestas?✨<br><br><b>¡haz magia en el aire hoy mismo!</b>')">Ver Detalles</button>
+    </div>
+</div>
+
+
+<!-- PRODUCTO 11 plastilina color varios -->
+<div class="product-card" data-category="juguetes">
+    <div class="product-image-container" onclick="openModal([
+       'assets/img/nuevos/plastilina.jpeg', 
+        
+            
+    ], 'Kit Color dough', 19900, 
+       '¿Quieres estimular la creatividad de tu hijo y ocupar su mente productivamente?✨<br><br><b>¡Antiestrés en este instante!</b>')">
+
+
+        <img src="assets/img/nuevos/plastilina.jpeg" alt="Tapete Atrapa Arena">
+    </div>
+    <div class="product-info">
+        <h3 class="product-title">KIT COLOR DOUGH</h3>
+        <span class="old-price">COP 24.900</span>
+        <div class="product-price">COP 19.900</div>
+        <button class="btn-details" onclick="openModal([
+             'assets/img/nuevos/plastilina.jpeg' 
+             
+        ], 'Kit Color dough', 19900,  '¿Quieres estimular la creatividad de tu hijo y ocupar su mente productivamente?✨<br><br><b>¡Antiestrés en este instante!</b>')">Ver Detalles</button>
+    </div>
+</div>
+
+
+<!-- PRODUCTO 12 gota sqishy gel -->
+<div class="product-card" data-category="juquetes">
+    <div class="product-image-container" onclick="openModal([
+       'assets/img/nuevos/slime-gota.jpg', 
+        
+            
+    ], 'Gel antiestrés', 7900, 
+       '¿Quieres desestrarte naturalmente en tu oficina?✨<br><br><b>¡haz un regalo hoy mismo!</b>')">
+
+
+        <img src="assets/img/nuevos/slime-gota.jpg" alt="Tapete Atrapa Arena">
+    </div>
+    <div class="product-info">
+        <h3 class="product-title">GOTA GEL ANTIESTRÉS</h3>
+        <span class="old-price">COP 9.900</span>
+        <div class="product-price">COP 7.900</div>
+        <button class="btn-details" onclick="openModal([
+             'assets/img/nuevos/slime-gota.jpg' 
+             
+        ], 'Gel antiestrés', 7900, '¿Quieres desestrarte naturalmente en tu oficina?✨<br><br><b>¡haz un regalo hoy mismo!</b>')">Ver Detalles</button>
+    </div>
+</div>
+
+
+
+
+<!-- PRODUCTO 13 marcadores -->
+<div class="product-card" data-category="papeleria">
+    <div class="product-image-container" onclick="openModal([
+       'assets/img/nuevos/marcadores.jpg', 
+        
+            
+    ], 'Marcadores 3D', 14900, 
+       '¿Te gustaría marcar la diferencia con 3D?✨<br><br><b>¡haz magia tus cuadernos!</b>')">
+
+
+        <img src="assets/img/nuevos/marcadores.jpg" alt="Tapete Atrapa Arena">
+    </div>
+    <div class="product-info">
+        <h3 class="product-title">MARCADORES 3D</h3>
+        <span class="old-price">COP 19.900</span>
+        <div class="product-price">COP 14.900</div>
+        <button class="btn-details" onclick="openModal([
+             'assets/img/nuevos/marcadores.jpg' 
+             
+        ], 'Marcadores 3D', 14900,  '¿Te gustaría marcar la diferencia con 3D?✨<br><br><b>¡haz magia tus cuadernos!</b>')">Ver Detalles</button>
+    </div>
+</div>
+
+<!-- PRODUCTO 14  borradores -->
+<div class="product-card" data-category="papeleria">
+    <div class="product-image-container" onclick="openModal([
+       'assets/img/nuevos/borradores.jpeg', 
+        
+            
+    ], 'Borradores mágicos', 4900, 
+      '¿Quieres corregir con diversión?✨<br><br><b>¡haz magia en el cuadernos de tus hijos hoy mismo!</b>')">
+
+
+        <img src="assets/img/nuevos/borradores.jpeg" alt="Tapete Atrapa Arena">
+    </div>
+    <div class="product-info">
+        <h3 class="product-title">BORRADORES MÁGICOS x 3 ($4.900) | x 1 ($1.900) </h3>
+       
+        <span class="old-price">COP 6.900</span>
+        <div class="product-price">COP 4.900</div>
+        <button class="btn-details" onclick="openModal([
+             'assets/img/nuevos/borradores.jpeg' 
+             
+        ], 'Borradores mágicos', 4900, '¿Quieres corregir con diversión?✨<br><br><b>¡haz magia en el cuadernos de tus hijos hoy mismo!</b>')">Ver Detalles</button>
+    </div>
+</div>
+
+
+
+<!-- PRODUCTO 15 SLIME PRINCESA-->
+<div class="product-card" data-category="juguetes">
+    <div class="product-image-container" onclick="openModal([
+       'assets/img/nuevos/slime-princesa.jpg', 
+        
+            
+    ], 'Slime princesa', 14900,  
+       '¿Quieres jugar con las luces de personalidad?✨<br><br><b>¡haz magia en día a día hoy mismo!</b>')">
+
+
+        <img src="assets/img/nuevos/slime-princesa.jpg" alt="Tapete Atrapa Arena">
+    </div>
+    <div class="product-info">
+        <h3 class="product-title">SLIME PRINCESA 3 en 1 </h3>
+        <span class="old-price">COP 19.900</span>
+        <div class="product-price">COP 14.900</div>
+        <button class="btn-details" onclick="openModal([
+             'assets/img/nuevos/slime-princesa.jpg' 
+             
+        ], 'Slime princesa', 14900, '¿Quieres jugar con las luces de personalidad?✨<br><br><b>¡haz magia en día a día hoy mismo!</b>')">Ver Detalles</button>
+    </div>
+</div>
+
+<!-- PRODUCTO 15 huella -->
+<div class="product-card" data-category="juguetes">
+    <div class="product-image-container" onclick="openModal([
+       'assets/img/nuevos/huella.jpeg', 
+        
+            
+    ], 'Huella Squishy', 9900, 
+       '¿Quieres brillar y relajarte al mismo tiempo?✨<br><br><b>¡diversión y antiestrés hoy mismo!</b>')">
+
+
+        <img src="assets/img/nuevos/huella.jpeg" alt="Tapete Atrapa Arena">
+    </div>
+    <div class="product-info">
+        <h3 class="product-title">HUELLA SQUISHY</h3>
+        <span class="old-price">COP 11.900</span>
+        <div class="product-price">COP 9.900 </div>
+        <button class="btn-details" onclick="openModal([
+             'assets/img/nuevos/huella.jpeg' 
+             
+        ], 'Huella Squishy', 9900,  '¿Quieres brillar y relajarte al mismo tiempo?✨<br><br><b>¡diversión y antiestrés hoy mismo!</b>')">Ver Detalles</button>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+<!-- PRODUCTO 1 TAPETE ARENA GATOS -->
+<div class="product-card" data-category="mascotas">
+    <div class="product-image-container" onclick="openModal([
+       'assets/img/nuevos/tapete-gato.png', 
+           'assets/img/nuevos/tapete-gato1.png', 
+            'assets/img/nuevos/tapete-gato2.png'
+    ], 'Tapete Sanitario Recolector de Arena para Gatos | Impermeable y Antideslizante', 24900, 
+    '¿Cansado de barrer arena de gato todos los días por toda la casa? Mantén tus suelos limpios y secos con nuestro tapete doble capa impermeable. Atrapa cada grano al instante y olvídate del reguero en casa<br><br><b>¡Haz que la limpieza del hogar sea mucho más fácil hoy!</b>')">
+        <img src="assets/img/nuevos/tapete-gato.png" alt="Tapete Atrapa Arena">
+    </div>
+    <div class="product-info">
+        <h3 class="product-title">TAPETE SANITARIO RECOLECTOR DE ARENA PARA GATOS</h3>
+        <span class="old-price">COP 30.000</span>
+        <div class="product-price">COP 24.900</div>
+        <button class="btn-details" onclick="openModal([
+            'assets/img/nuevos/tapete-gato.png', 
+            'assets/img/nuevos/tapete-gato1.png', 
+            'assets/img/nuevos/tapete-gato2.png'
+        ], 'Tapete Sanitario Recolector de Arena para Gatos | Impermeable y Antideslizante', 24900, '¿Cansado de barrer arena de gato todos los días por toda la casa? Mantén tus suelos impecables con nuestro tapete doble capa impermeable. Su diseño inteligente atrapa cada grano al salir del arenero y evita que la humedad traspase el piso. Es fácil de limpiar, cómodo para las patitas de tu felino y la solución definitiva para olvidarte del reguero.<br><br><b>¡Haz que la limpieza del hogar sea mucho más fácil hoy!</b>')">Ver Detalles</button>
+    </div>
+</div>
+
+        <!-- PRODUCTO 2 tablet magica LCD 5 PULGADAS  -->
+        <div class="product-card" data-category="tecnologia">
+            <div class="product-image-container" onclick="openModal([
+               
+                'assets/img/nuevos/tablet5pulgadas1.jpg' ,
+                 'assets/img/nuevos/tablet5pulgadas.jpg' 
+            ], 'TABLET MÁGICA LCD 16 PULGADA', 11900, '¿Buscas estimular su creatividad o dejar notas sin gastar una sola hoja de papel? Descubre nuestra <b>Tablet Mágica LCD 5 pulgadas</b>. Pantalla ultraligera, sensible a la presión brinda la sensación real de escribir sobre papel. Con perilla de bloqueo, conserva tus trazos y borra con un solo toque. Es ideal para todas las edades, portátil y no requiere cables ni cargas. <br><br><b>¡Crea, dibuja y diviértete sin límites todos los días!</b>')">
+                <img src="assets/img/nuevos/tablet5pulgadas1.jpg" alt="Segundo Producto">
+            </div>
+            <div class="product-info">
+                <h3 class="product-title">TABLET MÁGICA LCD 5 PULGADAS</h3>
+                <span class="old-price">COP 14.900</span>
+                <div class="product-price">COP 11.900</div>
+                <button class="btn-details" onclick="openModal([
+                 
+              
+                'assets/img/nuevos/tablet5pulgadas.jpg'
+                ], 'TABLET MÁGICA LCD 5 PULGADA', 11900, '¿Buscas estimular su creatividad o dejar notas sin gastar una sola hoja de papel? Descubre nuestra <b>Tablet Mágica LCD 5 pulgadas</b>. Pantalla ultraligera, sensible a la presión brinda la sensación real de escribir sobre papel. Con perilla de bloqueo, conserva tus trazos y borra con un solo toque. Es ideal para todas las edades, portátil y no requiere cables ni cargas. <br><br><b>¡Crea, dibuja y diviértete sin límites todos los días!</b>')">Ver Detalles</button>
+            </div>
+        </div>
+
+
+
+
+
+        <!-- PRODUCTO 3 tablet magica LCD 15 PULGADAS  -->
+        <div class="product-card" data-category="tecnologia">
+            <div class="product-image-container" onclick="openModal([
+            'assets/img/nuevos/tablet15pulgadas.png' ,
+                'assets/img/nuevos/tablet15pulgadas1.png' ,
+                'assets/img/nuevos/tablet15pulgadas2.png'
+            ], 'Tableta Pizarra Mágica LCD 12 Pulgadas', 19900, '¿Buscas una forma divertida y creativa para que tus hijos dibujen sin ensuciar la casa? Introduce a tus pequeños en el mundo de la diversión con nuestra <b>Tableta Pizarra Mágica LCD de 15 Pulgadas</b>. Es la pizarra electrónica ideal para una experiencia única de dibujo sin papel, con función de borrado instantáneo y máxima facilidad de uso.<br><br><b>¡El lienzo portátil perfecto para despertar su imaginación sin gastar una sola hoja!</b>')">
+                <img src="assets/img/nuevos/tablet15pulgadas.png" alt="Segundo Producto">
+            </div>
+            <div class="product-info">
+                <h3 class="product-title">TABLET MÁGICA LCD 15 PULGADAS</h3>
+                <span class="old-price">COP 25.000</span>
+                <div class="product-price">COP 19.900</div>
+                <button class="btn-details" onclick="openModal([
+              
+  'assets/img/nuevos/tablet15pulgadas.png' ,
+                'assets/img/nuevos/tablet15pulgadas1.png' ,
+                'assets/img/nuevos/tablet15pulgadas2.png'
+
+                ], 'Tableta Pizarra Mágica LCD 15 Pulgadas', 19900, '¿Buscas una forma divertida y creativa para que tus hijos dibujen sin ensuciar la casa? Introduce a tus pequeños en el mundo de la diversión con nuestra <b>Tableta Pizarra Mágica LCD de 15 Pulgadas /b>. Es la pizarra electrónica ideal para una experiencia única de dibujo sin papel, con función de borrado instantáneo y máxima facilidad de uso.<br><br><b>¡El lienzo portátil perfecto para despertar su imaginación sin gastar una sola hoja!</b>')">Ver Detalles</button>
+        </div>
+</div>
+
+        <!-- PRODUCTO 4 TABLET 8.5 LCD -->
+     <!-- <div class="product-card" data-category="tecnologia">
+            <div class="product-image-container" onclick="openModal([
+               'assets/img/tabletiburon/tabletiburon.png',
+                'assets/img/tabletiburon/tabletiburon1.png', 
+                'assets/img/tabletiburon/tabletiburon2.png', 
+                'assets/img/tabletiburon/tabletiburon3.png'
+], 'Tableta Lousa Magic Shark LCD', 29900, '¿Buscas una forma mágica y educativa para que los niños exploren su creatividad sin pantallas dañinas? <b>Tableta LCD interactiva con diseño submarino</b> que incluye bolígrafos de punta fina y gruesa para dibujar y escribir sin parar. <b>¡Despierta su imaginación y diviértete aprendiendo sin límites!</b>')">                <img src="assets/img/tabletiburon/tabletiburon.png" alt="Segundo Producto">
+            </div>
+            <div class="product-info">
+                <h3 class="product-title">TABLET MÁGICA 8.5 TIBURÓN LOUSA PULGADAS</h3>
+                <span class="old-price">COP 35.000</span>
+                <div class="product-price">COP 29.900</div>
+                <button class="btn-details" onclick="openModal([
+                'assets/img/tabletiburon/tabletiburon.png',
+                'assets/img/tabletiburon/tabletiburon1.png', 
+                'assets/img/tabletiburon/tabletiburon2.png', 
+                'assets/img/tabletiburon/tabletiburon3.png'
+], 'Tableta Lousa Magic Shark LCD', 29900, '¿Buscas una forma mágica y educativa para que los niños exploren su creatividad sin pantallas dañinas? <b>Tableta LCD interactiva con diseño submarino</b> que incluye bolígrafos de punta fina y gruesa para dibujar y escribir sin parar. <b>¡Despierta su imaginación y diviértete aprendiendo sin límites!</b>')">Ver Detalles</button>
+                </div>
+</div> -->
+
+        <!-- PRODUCTO 5 TAPETE AGUA MAGICO -->
+        <!-- <div class="product-card" data-category="hogar">
+            <div class="product-image-container" onclick="openModal([
+               'assets/img/tapeteaguamagico/tapetemagicoagua2.png', 
+                'assets/img/tapeteaguamagico/tapetemagicoagua1.png', 
+                 'assets/img/tapeteaguamagico/tapetemagicoagua.png'
+            ], 'Tapete para Garabatear con Agua', 29900, '¿Buscas una forma divertida y creativa para que tus hijos dibujen sin ensuciar? <b>Tapete de tela ecológico y seguro</b> que se pliega fácilmente para llevar a cualquier lugar y estimula la imaginación de los más pequeños. <b>¡El regalo perfecto para aprender jugando en familia!</b>')">
+                <img src="assets/img/tapeteaguamagico/tapetemagicoagua2.png" alt="Tapete Atrapa Arena">
+            </div>
+            <div class="product-info">
+                <h3 class="product-title">TAPETE MAGICO DE AGUA PARA DIBUJAR</h3>
+                 <span class="old-price">COP 35.000</span>
+                <div class="product-price">COP 29.900</div>
+                <button class="btn-details" onclick="openModal([
+                   'assets/img/tapeteaguamagico/tapetemagicoagua2.png', 
+                'assets/img/tapeteaguamagico/tapetemagicoagua1.png', 
+                 'assets/img/tapeteaguamagico/tapetemagicoagua.png'
+                ], 'Tapete para Garabatear con Agua', 29900, '¿Buscas una forma divertida y creativa para que tus hijos dibujen sin ensuciar? <b>Tapete de tela ecológico y seguro</b> que se pliega fácilmente para llevar a cualquier lugar y estimula la imaginación de los más pequeños. <b>¡El regalo perfecto para aprender jugando en familia!</b>')">Ver Detalles</button>
+            </div>
+        </div> -->
+
+
+        <!-- PRODUCTO 5 MOLINO CAFE MANUAL  -->
+<!-- <div class="product-card" data-category="hogar">
+    <div class="product-image-container" onclick="openModal([
+          'assets/img/molino-cafe/molinocafe-manizales.png', 
+            'assets/img/molino-cafe/molino-cafe1.png', 
+            'assets/img/molino-cafe/molino-cafe2.png',
+            'assets/img/molino-cafe/molino-cafe3.png'
+], 'Molinillo de Café Manual Cónico', 24900, '¿Quieres disfrutar del mejor café recién molido en cualquier lugar? <b>Mecanismo de muelas cónicas que preserva los aceites y aromas naturales del café</b>. Ideal para viajes, camping y uso en casa, siendo duradero y fácil de limpiar. <b>¡Optimice su ritual de café con este molinillo y experimente una nueva dimensión en el sabor!</b>')">
+        <img src="assets/img/molino-cafe/molinocafe-manizales.png" alt="Tapete Atrapa Arena">
+    </div>
+    <div class="product-info">
+        <h3 class="product-title">MOLINO DE CAFE MANUAL</h3>
+        <div class="product-price-container">
+    <span class="old-price">COP 29.000</span>
+    <span class="product-price">COP 24.900</span>
+</div>
+        <button class="btn-details" onclick="openModal([
+            'assets/img/molino-cafe/molinocafe-manizales.png', 
+            'assets/img/molino-cafe/molino-cafe1.png', 
+            'assets/img/molino-cafe/molino-cafe2.png', 
+            'assets/img/molino-cafe/molino-cafe3.png'
+], 'Molinillo de Café Manual Cónico', 24900, '¿Quieres disfrutar del mejor café recién molido en cualquier lugar? <b>Mecanismo de muelas cónicas que preserva los aceites y aromas naturales del café</b>. Ideal para viajes, camping y uso en casa, siendo duradero y fácil de limpiar. <b>¡Optimice su ritual de café con este molinillo y experimente una nueva dimensión en el sabor!</b>')">Ver Detalles</button>
+    </div>
+</div> -->
+
+ <!-- PRODUCTO 6 MOLINO ELECTRICO CAFE Y GRANOS -->
+<!-- <div class="product-card" data-category="hogar">
+    <div class="product-image-container" onclick="openModal([
+        'assets/img/molinoelectrico/molinoelectrico.png'
+], 'Molinillo Eléctrico de Café y Especias', 29900, '¿Buscas una forma rápida y práctica de moler café, semillas y especias en segundos? <b>Potente motor de 150W con cuchillas de acero inoxidable</b> y diseño compacto de un solo toque. <b>¡Disfruta de la máxima frescura y sabor en cada preparación!</b>')">
+        <img src="assets/img/molinoelectrico/molinoelectrico.png" alt="Tapete Atrapa Arena">
+    </div>
+    <div class="product-info">
+        <h3 class="product-title">MOLINO ELÉCTRICO CAFE Y GRANOS</h3>
+        <div class="product-price-container">
+    <span class="old-price">COP 39.000</span>
+    <span class="product-price">COP 29.900</span>
+</div>
+        <button class="btn-details" onclick="openModal([
+            'assets/img/molinoelectrico/molinoelectrico.png'
+      ], 'Molinillo Eléctrico de Café y Especias', 29900, '¿Buscas una forma rápida y práctica de moler café, semillas y especias en segundos? <b>Potente motor de 150W con cuchillas de acero inoxidable</b> y diseño compacto de un solo toque. <b>¡Disfruta de la máxima frescura y sabor en cada preparación!</b>')">Ver Detalles</button>     
+    </div>
+</div> -->
+
+
+
+   
+<!-- PRODUCTO 10  RODILLO LIMPIADOR DE PELOS REUTILIZABLE  -->
+<div class="product-card" data-category="mascotas">
+    <div class="product-image-container" onclick="openModal([
+           'assets/img/nuevos/rodillo.jpeg',
+       'assets/img/nuevos/rodillo1.png',
+       'assets/img/nuevos/rodillo2.png',
+       'assets/img/nuevos/rodillo3.png'
+    ], 'Quitapelusas Portátil Reutilizable y Lavable', 24900, '¿Cansada/o de pelos de gato y perro en tu ropa y muebles? Despídete del pelo de mascotas, pelusas y polvo. Su <b>diseño ergonómico se adapta fácilmente a tu mano</b> y es 100% lavable y reutilizable. Ideal para ropa, sofás y viajes. <b>¡Ropa limpia en segundos, sin complicaciones!</b><br><br><b>Mira los videos del producto en acción:</b><br><br><div style=&quot;position:relative;width:100%;padding-bottom:56.25%;height:0;margin-bottom:15px;&quot;><iframe src=&quot;https://www.youtube.com/embed/x0ZM0CCESEI&quot; style=&quot;position:absolute;top:0;left:0;width:100%;height:100%;border:0;&quot; allowfullscreen></iframe></div><div style=&quot;position:relative;width:100%;padding-bottom:56.25%;height:0;margin-bottom:15px;&quot;><iframe src=&quot;https://www.youtube.com/embed/Yf1wchvZgKI&quot; style=&quot;position:absolute;top:0;left:0;width:100%;height:100%;border:0;&quot; allowfullscreen></iframe></div><div style=&quot;position:relative;width:100%;padding-bottom:56.25%;height:0;margin-bottom:15px;&quot;><iframe src=&quot;https://www.youtube.com/embed/PLtg9SFJBrk&quot; style=&quot;position:absolute;top:0;left:0;width:100%;height:100%;border:0;&quot; allowfullscreen></iframe></div><div style=&quot;position:relative;width:100%;padding-bottom:56.25%;height:0;margin-bottom:15px;&quot;><iframe src=&quot;https://www.youtube.com/embed/oDYFCViopjs&quot; style=&quot;position:absolute;top:0;left:0;width:100%;height:100%;border:0;&quot; allowfullscreen></iframe></div><div style=&quot;position:relative;width:100%;padding-bottom:56.25%;height:0;&quot;><iframe src=&quot;https://www.youtube.com/embed/Oxm_40xF3Nk&quot; style=&quot;position:absolute;top:0;left:0;width:100%;height:100%;border:0;&quot; allowfullscreen></iframe></div>')">
+        <img src="assets/img/nuevos/rodillo3.png" alt="Tapete Atrapa Arena">
+    </div>
+    <div class="product-info">
+        <h3 class="product-title">RODILLO LIMPIADOR DE PELOS REUTILIZABLE</h3>
+        <div class="product-price-container">
+            <span class="old-price">COP 29.900</span>
+            <span class="product-price">COP 24.900</span>
+        </div>
+        <button class="btn-details" onclick="openModal([
+     
+            'assets/img/nuevos/rodillo.jpeg',
+        'assets/img/nuevos/rodillo1.png',
+       'assets/img/nuevos/rodillo2.png',
+       'assets/img/nuevos/rodillo3.png'
+        ], 'Quitapelusas Portátil Reutilizable y Lavable', 24900, '¿Cansada/o de pelos de gato y perro en tu ropa y muebles? Despídete del pelo de mascotas, pelusas y polvo. Su <b>diseño ergonómico se adapta fácilmente a tu mano</b> y es 100% lavable y reutilizable. Ideal para ropa, sofás y viajes. <b>¡Ropa limpia en segundos, sin complicaciones!</b><br><br><b>Mira los videos del producto en acción:</b><br><br><div style=&quot;position:relative;width:100%;padding-bottom:56.25%;height:0;margin-bottom:15px;&quot;><iframe src=&quot;https://www.youtube.com/embed/x0ZM0CCESEI&quot; style=&quot;position:absolute;top:0;left:0;width:100%;height:100%;border:0;&quot; allowfullscreen></iframe></div><div style=&quot;position:relative;width:100%;padding-bottom:56.25%;height:0;margin-bottom:15px;&quot;><iframe src=&quot;https://www.youtube.com/embed/Yf1wchvZgKI&quot; style=&quot;position:absolute;top:0;left:0;width:100%;height:100%;border:0;&quot; allowfullscreen></iframe></div><div style=&quot;position:relative;width:100%;padding-bottom:56.25%;height:0;margin-bottom:15px;&quot;><iframe src=&quot;https://www.youtube.com/embed/PLtg9SFJBrk&quot; style=&quot;position:absolute;top:0;left:0;width:100%;height:100%;border:0;&quot; allowfullscreen></iframe></div><div style=&quot;position:relative;width:100%;padding-bottom:56.25%;height:0;margin-bottom:15px;&quot;><iframe src=&quot;https://www.youtube.com/embed/oDYFCViopjs&quot; style=&quot;position:absolute;top:0;left:0;width:100%;height:100%;border:0;&quot; allowfullscreen></iframe></div><div style=&quot;position:relative;width:100%;padding-bottom:56.25%;height:0;&quot;><iframe src=&quot;https://www.youtube.com/embed/Oxm_40xF3Nk&quot; style=&quot;position:absolute;top:0;left:0;width:100%;height:100%;border:0;&quot; allowfullscreen></iframe></div>')">Ver Detalles</button>
+    </div>
+</div>
+
+
+<!-- PRODUCTO 10  pulso capibara cantante   -->
+
+
+<div class="product-card" data-category="juguetes">
+    <div class="product-image-container" onclick="openModal([
+       'assets/img/nuevos/capibara-cantante.jpg', 
+        
+            
+    ], 'Capibara Cantante Pulso', 19900, '¿algo divertido e interactivo?  <b>Se pone en el Pulso de la mano, Canta, se mueve, baila y tiene luces</b> <b>¡Disfruta de su ritmo CAPIRABARA CANTANTE en tu mano pulsera!</b>')">
+
+
+    <img src="assets/img/nuevos/capibara-cantante.jpg" alt="Tapete Atrapa Arena">
+    </div>
+    <div class="product-info">
+        <h3 class="product-title">CAPIBARA CANTANTE PULSO</h3>
+        <span class="old-price">COP 24.900</span>
+        <div class="product-price">COP 19.900 </div>
+        <button class="btn-details" onclick="openModal([
+             'assets/img/nuevos/capibara-cantante.jpg' 
+             
+        ], 'Capibara Cantante Pulso', 19900,  '¿algo divertido e interactivo?  <b>Se pone en el Pulso de la mano, Canta, se mueve, baila y tiene luces</b> <b>¡Disfruta de su ritmo CAPIRABARA CANTANTE en tu mano pulsera!')">Ver Detalles</button>
+    </div>
+</div>
+
+
+
+<!-- PRODUCTO   pulso capibara    -->
+
+
+<div class="product-card" data-category="juguetes">
+    <div class="product-image-container" onclick="openModal([
+       'assets/img/nuevos/capiraba-pulso.jpg'
+        
+            
+    ], 'Capibara Pulso', 14900, '¿Tu mascota en en tu brazo mientras manejas o caminas?  <b>Ideal para regalo</b> <b>¡No te quedes sin el tuyo!')">
+
+
+    <img src="assets/img/nuevos/capiraba-pulso.jpg" alt="Tapete Atrapa Arena">
+    </div>
+    <div class="product-info">
+        <h3 class="product-title">CAPIBARA PULSO Café</h3>
+        <span class="old-price">COP 19.900</span>
+        <div class="product-price">COP 14.900 </div>
+        <button class="btn-details" onclick="openModal([
+             'assets/img/nuevos/capiraba-pulso.jpg' 
+             
+        ], 'Capibara Pulso', 19900,  '¿Tu mascota en en tu brazo mientras manejas o caminas?  <b>Ideal para regalo</b> <b>¡No te quedes sin el tuyo!')">Ver Detalles</button>
+    </div>
+</div>
+
+
+<!-- PRODUCTO   LLAVERO ANTOALÉRGICO DOBLE CARA    -->
+
+
+<div class="product-card" data-category="juguetes">
+    <div class="product-image-container" onclick="openModal([
+       'assets/img/nuevos/capiraba-pulso.jpg'
+        
+            
+    ], 'Antialérgico doble cara y colgable', 19900, '¿Te gustaría 2 en 1 ?  <b>Ideal para llevarlo a toda parte </b> <b>¡Súper divertido!')">
+
+
+    <img src="assets/img/nuevos/pelucheazul-antialergico.jpeg" alt="Tapete Atrapa Arena">
+    </div>
+    <div class="product-info">
+        <h3 class="product-title">ANTIALÉRGICO DOBLE CARA Y COLGABLE 2 en 1 </h3>
+        <span class="old-price">COP 24.900</span>
+        <div class="product-price">COP 19.900 </div>
+        <button class="btn-details" onclick="openModal([
+             'assets/img/nuevos/capiraba-pulso.jpg' 
+             
+        ], 'Antialérgico doble cara y colgable', 19900,  '¿Te gustaría 2 en 1 ?  <b>Ideal para llevarlo a toda parte </b> <b>¡Súper divertido!')">Ver Detalles</button>
+    </div>
+</div>
+
+
+<!-- PRODUCTO   LLAVERO ANTOALÉRGICO DOBLE CARA    -->
+
+
+<div class="product-card" data-category="papeleria">
+    <div class="product-image-container" onclick="openModal([
+       'assets/img/nuevos/cartuchera3d2.jpeg',
+       'assets/img/nuevos/cartuchera3d1.jpg',
+       'assets/img/nuevos/cartuchera3d.jpeg'
+        
+            
+    ], 'Cartuchera 3d Relieve', 14900, '¿Te gustaría 2 en 1 ?  <b>Ideal para llevarlo a toda parte </b> <b>¡Súper divertido!')">
+
+
+    <img src="assets/img/nuevos/cartuchera3d2.jpeg" alt="Tapete Atrapa Arena">
+    </div>
+    <div class="product-info">
+        <h3 class="product-title">CATUCHERA 3D </h3>
+        <span class="old-price">COP 19.900</span>
+        <div class="product-price">COP 14.900 </div>
+        <button class="btn-details" onclick="openModal([
+           'assets/img/nuevos/cartuchera3d2.jpeg',
+       'assets/img/nuevos/cartuchera3d1.jpg',
+       'assets/img/nuevos/cartuchera3d.jpeg'
+             
+        ], 'Cartuchera 3d Relieve', 14900,  '¿Te gustaría 2 en 1 ?  <b>Ideal para llevarlo a toda parte </b> <b>¡Súper divertido!')">Ver Detalles</button>
+    </div>
+</div>
+
+   
+<!-- PRODUCTO 10  RODILLO LIMPIADOR DE PELOS REUTILIZABLE  -->
+<!-- <div class="product-card" data-category="mascotas">
+    <div class="product-image-container" onclick="openModal([
+        'assets/img/rodillolimpiadorpelos/rodillolimpiadorpelos.png',
+        'assets/img/rodillolimpiadorpelos/rodillolimpiadorpelos1.png',
+        'assets/img/rodillolimpiadorpelos/rodillolimpiadorpelos2.png',
+        'assets/img/rodillolimpiadorpelos/rodillolimpiadorpelos3.png'
+    ], 'Quitapelusas Portátil Reutilizable y Lavable', 24900, '¿Cansada/o de pelos de gato y perro en tu ropa y muebles? Despídete del pelo de mascotas, pelusas y polvo. Su <b>diseño ergonómico se adapta fácilmente a tu mano</b> y es 100% lavable y reutilizable. Ideal para ropa, sofás y viajes. <b>¡Ropa limpia en segundos, sin complicaciones!</b><br><br><b>Mira los videos del producto en acción:</b><br><br><div style=&quot;position:relative;width:100%;padding-bottom:56.25%;height:0;margin-bottom:15px;&quot;><iframe src=&quot;https://www.youtube.com/embed/x0ZM0CCESEI&quot; style=&quot;position:absolute;top:0;left:0;width:100%;height:100%;border:0;&quot; allowfullscreen></iframe></div><div style=&quot;position:relative;width:100%;padding-bottom:56.25%;height:0;margin-bottom:15px;&quot;><iframe src=&quot;https://www.youtube.com/embed/Yf1wchvZgKI&quot; style=&quot;position:absolute;top:0;left:0;width:100%;height:100%;border:0;&quot; allowfullscreen></iframe></div><div style=&quot;position:relative;width:100%;padding-bottom:56.25%;height:0;margin-bottom:15px;&quot;><iframe src=&quot;https://www.youtube.com/embed/PLtg9SFJBrk&quot; style=&quot;position:absolute;top:0;left:0;width:100%;height:100%;border:0;&quot; allowfullscreen></iframe></div><div style=&quot;position:relative;width:100%;padding-bottom:56.25%;height:0;margin-bottom:15px;&quot;><iframe src=&quot;https://www.youtube.com/embed/oDYFCViopjs&quot; style=&quot;position:absolute;top:0;left:0;width:100%;height:100%;border:0;&quot; allowfullscreen></iframe></div><div style=&quot;position:relative;width:100%;padding-bottom:56.25%;height:0;&quot;><iframe src=&quot;https://www.youtube.com/embed/Oxm_40xF3Nk&quot; style=&quot;position:absolute;top:0;left:0;width:100%;height:100%;border:0;&quot; allowfullscreen></iframe></div>')">
+        <img src="assets/img/rodillolimpiadorpelos/rodillolimpiadorpelos.png" alt="Tapete Atrapa Arena">
+    </div>
+    <div class="product-info">
+        <h3 class="product-title">RODILLO LIMPIADOR DE PELOS REUTILIZABLE</h3>
+        <div class="product-price-container">
+            <span class="old-price">COP 29.900</span>
+            <span class="product-price">COP 24.900</span>
+        </div>
+        <button class="btn-details" onclick="openModal([
+            'assets/img/rodillolimpiadorpelos/rodillolimpiadorpelos.png',
+            'assets/img/rodillolimpiadorpelos/rodillolimpiadorpelos1.png',
+        'assets/img/rodillolimpiadorpelos/rodillolimpiadorpelos2.png',
+        'assets/img/rodillolimpiadorpelos/rodillolimpiadorpelos3.png'
+        ], 'Quitapelusas Portátil Reutilizable y Lavable', 124900, '¿Cansada/o de pelos de gato y perro en tu ropa y muebles? Despídete del pelo de mascotas, pelusas y polvo. Su <b>diseño ergonómico se adapta fácilmente a tu mano</b> y es 100% lavable y reutilizable. Ideal para ropa, sofás y viajes. <b>¡Ropa limpia en segundos, sin complicaciones!</b><br><br><b>Mira los videos del producto en acción:</b><br><br><div style=&quot;position:relative;width:100%;padding-bottom:56.25%;height:0;margin-bottom:15px;&quot;><iframe src=&quot;https://www.youtube.com/embed/x0ZM0CCESEI&quot; style=&quot;position:absolute;top:0;left:0;width:100%;height:100%;border:0;&quot; allowfullscreen></iframe></div><div style=&quot;position:relative;width:100%;padding-bottom:56.25%;height:0;margin-bottom:15px;&quot;><iframe src=&quot;https://www.youtube.com/embed/Yf1wchvZgKI&quot; style=&quot;position:absolute;top:0;left:0;width:100%;height:100%;border:0;&quot; allowfullscreen></iframe></div><div style=&quot;position:relative;width:100%;padding-bottom:56.25%;height:0;margin-bottom:15px;&quot;><iframe src=&quot;https://www.youtube.com/embed/PLtg9SFJBrk&quot; style=&quot;position:absolute;top:0;left:0;width:100%;height:100%;border:0;&quot; allowfullscreen></iframe></div><div style=&quot;position:relative;width:100%;padding-bottom:56.25%;height:0;margin-bottom:15px;&quot;><iframe src=&quot;https://www.youtube.com/embed/oDYFCViopjs&quot; style=&quot;position:absolute;top:0;left:0;width:100%;height:100%;border:0;&quot; allowfullscreen></iframe></div><div style=&quot;position:relative;width:100%;padding-bottom:56.25%;height:0;&quot;><iframe src=&quot;https://www.youtube.com/embed/Oxm_40xF3Nk&quot; style=&quot;position:absolute;top:0;left:0;width:100%;height:100%;border:0;&quot; allowfullscreen></iframe></div>')">Ver Detalles</button>
+    </div>
+</div> -->
+
+   <!-- PRODUCTO 7 PLANTILLA 3MCS  -->
+<div class="product-card" data-category="belleza">
+    <div class="product-image-container" onclick="openModal([
+         'assets/img/nuevos/plantilla.png'
+], 'Plantillas Silicona Elevadoras 3CM', 24900, '¿Quieres ganar más altura sin sacrificar la comodidad de tus pies? Descubre nuestras <b>plantillas de silicona elevadoras</b>. Te otorgan hasta 3 cm de estatura al instante con un diseño ultra cómodo, suave y transpirable que amortigua cada paso y previene el dolor de talón. Son ideales para uso diario, se adaptan perfectamente y se pueden usar con medias o dentro de cualquier zapato.<br><br><b>¡Camina con más estilo, confianza y comodidad todos los días!</b>')">
+        <img src="assets/img/nuevos/plantilla.png" alt="Tapete Atrapa Arena">
+    </div>
+    <div class="product-info">
+        <h3 class="product-title">PLANTILLA AUMENTA ESTATURA 3 CMS</h3>
+        <div class="product-price-container">
+    <span class="old-price">COP 29.000</span>
+    <span class="product-price">COP 24.900</span>
+</div>
+        <button class="btn-details" onclick="openModal([
+           'assets/img/nuevos/plantilla.png'
+], 'Plantillas Silicona Elevadoras 3CM', 24900, '¿Quieres ganar más altura sin sacrificar la comodidad de tus pies? Descubre nuestras <b>plantillas de silicona elevadoras</b>. Te otorgan hasta 3 cm de estatura al instante con un diseño ultra cómodo, suave y transpirable que amortigua cada paso y previene el dolor de talón. Son ideales para uso diario, se adaptan perfectamente y se pueden usar con medias o dentro de cualquier zapato.<br><br><b>¡Camina con más estilo, confianza y comodidad todos los días!</b>')">Ver Detalles</button>
+    </div>
+</div>
+
+
+
+<!-- PRODUCTO 8 QUITAMOTAS RECARGABLE  -->
+<!-- <div class="product-card" data-category="hogar">
+    <div class="product-image-container" onclick="openModal([
+  'assets/img/removermotaselectrico/removedormotas.png',
+            'assets/img/quitamotasrecargable/quitamotasrecargable.png'
+], 'QUITAMOTAS RECARGABLE USB', 19900, '¿Quieres renovar tus suéteres y abrigos eliminando pelusas y bolitas al instante? <b>Diseño compacto con cuchillas de precisión</b> que cuidan las telas mientras limpian tus prendas sin cables. <b>¡Mantén toda tu ropa impecable y como nueva todos los días!</b>')">   
+        <img src="assets/img/quitamotasrecargable/quitamotasrecargable.png" alt="Tapete Atrapa Arena">
+    </div>
+    <div class="product-info">
+        <h3 class="product-title">REMOVEDOR MOTAS ELÉCTRICO</h3>
+        <div class="product-price-container">
+    <span class="old-price">COP 25.000</span>
+    <span class="product-price">COP 19.900</span>
+</div>
+        <button class="btn-details" onclick="openModal([
+           'assets/img/quitamotasrecargable/quitamotasrecargable.png'
+], 'Máquina Saca Pelusas Eléctrica Portátil', 19900, '¿Quieres renovar tus suéteres y abrigos eliminando pelusas y bolitas al instante? <b>Diseño compacto con cuchillas de precisión</b> que cuidan las telas mientras limpian tus prendas sin cables. <b>¡Mantén toda tu ropa impecable y como nueva todos los días!</b>')">Ver Detalles</button>     
+    </div>
+</div> -->
+
+
+<!-- PRODUCTO 9 REMOVEDOR MOTAS -->
+<!-- <div class="product-card" data-category="hogar">
+    <div class="product-image-container" onclick="openModal([
+        'assets/img/removermotaselectrico/removedormotas.png',
+        'assets/img/removermotaselectrico/removedormotas1.png',
+        'assets/img/removermotaselectrico/removedormotas2.png',
+        'assets/img/removermotaselectrico/removedormotas3.png',
+        'https://raw.githubusercontent.com/CODABits/sanbrei/main/videoremovedormotas.mp4'
+    ], 'Removedor de Motas Eléctrico RAF', 24900, '¿Quieres que tu ropa y textiles favoritos luzcan como nuevos sin pelusas ni bolitas? <b>Removedor recargable USB de 5W con cuchillas de acero inoxidable</b> para un corte seguro y eficiente en suéteres, mantas y sofás. <b>¡Devuélvele la vida a tus prendas al instante y con total facilidad!</b>')">
+        <img src="assets/img/removermotaselectrico/removedormotas.png" alt="Removedor de Motas Eléctrico">
+    </div>
+    <div class="product-info">
+        <h3 class="product-title">REMOVEDOR MOTAS ELÉCTRICO</h3>
+        <div class="product-price-container">
+            <span class="old-price">COP 30.000</span>
+            <span class="product-price">COP 24.900</span>
+        </div>
+        <button class="btn-details" onclick="openModal([
+            'assets/img/removermotaselectrico/removedormotas.png',
+            'assets/img/removermotaselectrico/removedormotas1.png',
+            'assets/img/removermotaselectrico/removedormotas2.png',
+            'assets/img/removermotaselectrico/removedormotas3.png',
+            'https://raw.githubusercontent.com/CODABits/sanbrei/main/videoremovedormotas.mp4'
+        ], 'Removedor de Motas Eléctrico RAF', 24900, '¿Quieres que tu ropa y textiles favoritos luzcan como nuevos sin pelusas ni bolitas? <b>Removedor recargable USB de 5W con cuchillas de acero inoxidable</b> para un corte seguro y eficiente en suéteres, mantas y sofás. <b>¡Devuélvele la vida a tus prendas al instante y con total facilidad!</b>')">Ver Detalles</button>      
+    </div>
+</div> -->
+        
+      
+      
+
+
+
+
+<!-- PRODUCTO 11 SECADOR DE ZAPATOS ELECTRICO -->
+<!-- <div class="product-card" data-category="hogar">
+    <div class="product-image-container" onclick="openModal([
+        'assets/img/secadortennis/secadortennis.png',
+        'assets/img/secadortennis/secadortennis1.png',
+        'assets/img/secadortennis/secadortennis2.png',
+        'assets/img/secadortennis/secadortennis3.png'
+    ], 'Secador de Tenis y Zapatos Eléctrico Ultravioleta', 49900, '¿Cansado de ponerte los tenis húmedos o lidiar con el mal olor después de entrenar? <b>Despídete de la humedad</b> y las bacterias de forma rápida gracias a su avanzada tecnología de <b>esterilización por luz ultravioleta (UV)</b> que combate hongos y malos olores. Su sistema de <b>control de temperatura constante de hasta 48 °C</b> seca tus zapatos con total seguridad sin dañar los materiales, mientras que su práctico <b>temporizador ajustable</b> te permite personalizar el tiempo de secado ideal. ¡Diseño plegable, portátil y perfecto para cuidar tu calzado favorito! <br><br><b>¡Protege la salud de tus pies y estreno calzado fresco todos los días!</b>')">
+        <img src="assets/img/secadortennis/secadortennis.png" alt="Secador de Zapatos Eléctrico">
+    </div>
+    <div class="product-info">
+        <h3 class="product-title">SECADOR DE TENIS ZAPATOS ELECTRICO ULTRA VIOLETA</h3>
+        <div class="product-price-container">
+            <span class="old-price">COP 70.000</span>
+            <span class="product-price">COP 49.900</span>
+        </div>
+        <button class="btn-details" onclick="openModal([
+               'assets/img/secadortennis/secadortennis.png',
+        'assets/img/secadortennis/secadortennis1.png',
+        'assets/img/secadortennis/secadortennis2.png',
+        'assets/img/secadortennis/secadortennis3.png'
+        ], 'Secador de Tenis y Zapatos Eléctrico Ultravioleta', 49900, '¿Cansado de ponerte los tenis húmedos o lidiar con el mal olor después de entrenar? <b>Despídete de la humedad</b> y las bacterias de forma rápida gracias a su avanzada tecnología de <b>esterilización por luz ultravioleta (UV)</b> que combate hongos y malos olores. Su sistema de <b>control de temperatura constante de hasta 48 °C</b> seca tus zapatos con total seguridad sin dañar los materiales, mientras que su práctico <b>temporizador ajustable</b> te permite personalizar el tiempo de secado ideal. ¡Diseño plegable, portátil y perfecto para cuidar tu calzado favorito! <br><br><b>¡Protege la salud de tus pies y estreno calzado fresco todos los días!</b>')">Ver Detalles</button>
+    </div>
+</div> -->
+
+<!-- PRODUCTO 12 DISPENSADOR ESTERILIZADOR CEPILLOS DIENTES UV -->
+<!-- <div class="product-card" data-category="hogar">
+    <div class="product-image-container" onclick="openModal([
+        'assets/img/esterilizadorcepillos/esterilizadorcepillos.png',
+        'assets/img/esterilizadorcepillos/esterilizadorcepillos1.png',
+        'assets/img/esterilizadorcepillos/esterilizadorcepillos2.png',
+        'assets/img/esterilizadorcepillos/esterilizadorcepillos3.png'
+    ], 'Dispensador y Esterilizador UV de Cepillos de Dientes Solar', 29900, '¿Sabías que los cepillos de dientes acumulan millones de bacterias peligrosas en el baño? Protege la salud oral de toda tu familia de forma automática y moderna. Este dispositivo de montaje en pared cuenta con un <b>esterilizador UV que reduce microorganismos en las cerdas del cepillo</b>. Además, incluye un <b>dispensador automático de pasta dental para evitar desperdicios y maximizar la eficiencia</b>, y posee un <b>panel solar para carga continua</b> (también compatible con cable USB). Fabricado en <b>plástico ABS resistente con capacidad para hasta cuatro cepillos</b>.<br><br><b>¡Dale a tu baño la tecnología, orden y máxima higiene que se merece hoy mismo!</b><br><br><b>Mira el producto en acción:</b><br><br><div style=&quot;position:relative;width:100%;padding-bottom:56.25%;height:0;&quot;><iframe src=&quot;https://www.youtube.com/embed/AttqB7fcjPc&quot; style=&quot;position:absolute;top:0;left:0;width:100%;height:100%;border:0;&quot; allowfullscreen></iframe></div>')">
+        <img src="assets/img/esterilizadorcepillos/esterilizadorcepillos.png" alt="Dispensador Esterilizador UV">
+    </div>
+    <div class="product-info">
+        <h3 class="product-title">DISPENSADOR ESTERILIZADOR CEPILLOS DIENTES UV</h3>
+        <div class="product-price-container">
+            <span class="old-price">COP 50.000</span>
+            <span class="product-price">COP 29.900</span>
+        </div>
+        <button class="btn-details" onclick="openModal([
+           'assets/img/esterilizadorcepillos/esterilizadorcepillos.png',
+        'assets/img/esterilizadorcepillos/esterilizadorcepillos1.png',
+        'assets/img/esterilizadorcepillos/esterilizadorcepillos2.png',
+        'assets/img/esterilizadorcepillos/esterilizadorcepillos3.png'
+        ], 'Dispensador y Esterilizador UV de Cepillos de Dientes Solar', 29900, '¿Sabías que los cepillos de dientes acumulan millones de bacterias peligrosas en el baño? Protege la salud oral de toda tu familia de forma automática y moderna. Este dispositivo de montaje en pared cuenta con un <b>esterilizador UV que reduce microorganismos en las cerdas del cepillo</b>. Además, incluye un <b>dispensador automático de pasta dental para evitar desperdicios y maximizar la eficiencia</b>, y posee un <b>panel solar para carga continua</b> (también compatible con cable USB). Fabricado en <b>plástico ABS resistente con capacidad para hasta cuatro cepillos</b>.<br><br><b>¡Dale a tu baño la tecnología, orden y máxima higiene que se merece hoy mismo!</b><br><br><b>Mira el producto en acción:</b><br><br><div style=&quot;position:relative;width:100%;padding-bottom:56.25%;height:0;&quot;><iframe src=&quot;https://www.youtube.com/embed/AttqB7fcjPc&quot; style=&quot;position:absolute;top:0;left:0;width:100%;height:100%;border:0;&quot; allowfullscreen></iframe></div>')">Ver Detalles</button>
+    </div>
+</div> -->
+
+<!-- PRODUCTO 13 CENICERO INTELIGENTE PURIFICADOR DE AIRE -->
+<!-- <div class="product-card" data-category="hogar">
+    <div class="product-image-container" onclick="openModal([
+        'assets/img/cenicero/cenicerointeligente.png',
+        'assets/img/cenicero/cenicerointeligente1.png',
+        'assets/img/cenicero/cenicerointeligente2.png'
+    ], 'Cenicero Inteligente Purificador de Aire', 34900, '¿Cansado del humo y los malos olores en tus espacios favoritos? Eleva tu decoración interior mientras disfrutas de un ambiente libre de humo. Está fabricado con <b>materiales resistentes al calor, altamente confiables y fáciles de mantener</b>. Además, cuenta con una extraordinaria <b>característica de autoextinción diseñada pensando en la seguridad</b>, apagando automáticamente las colillas de cigarrillos para minimizar el riesgo de incendios y asegurar una experiencia sin peligros.<br><br><b>¡Mantén tu hogar fresco, limpio y seguro hoy mismo!</b><br><br><b>Mira el producto en acción:</b><br><br><div style=&quot;position:relative;width:100%;padding-bottom:56.25%;height:0;&quot;><iframe src=&quot;https://www.youtube.com/embed/Ev6J7wFLvtg&quot; style=&quot;position:absolute;top:0;left:0;width:100%;height:100%;border:0;&quot; allowfullscreen></iframe></div>')">
+        <img src="assets/img/cenicero/cenicerointeligente.png" alt="Cenicero Inteligente Purificador de Aire">
+    </div>
+    <div class="product-info">
+        <h3 class="product-title">CENICERO INTELIGENTE PURIFICADOR DE AIRE</h3>
+        <div class="product-price-container">
+            <span class="old-price">COP 50.000</span>
+            <span class="product-price">COP 34.900</span>
+        </div>
+        <button class="btn-details" onclick="openModal([
+            'assets/img/cenicero/cenicerointeligente.png',
+            'assets/img/cenicero/cenicerointeligente1.png',
+            'assets/img/cenicero/cenicerointeligente2.png'
+        ], 'Cenicero Inteligente Purificador de Aire', 34900, '¿Cansado del humo y los malos olores en tus espacios favoritos? Eleva tu decoración interior mientras disfrutas de un ambiente libre de humo. Está fabricado con <b>materiales resistentes al calor, altamente confiables y fáciles de mantener</b>. Además, cuenta con una extraordinaria <b>característica de autoextinción diseñada pensando en la seguridad</b>, apagando automáticamente las colillas de cigarrillos para minimizar el riesgo de incendios y asegurar una experiencia sin peligros.<br><br><b>¡Mantén tu hogar fresco, limpio y seguro hoy mismo!</b><br><br><b>Mira el producto en acción:</b><br><br><div style=&quot;position:relative;width:100%;padding-bottom:56.25%;height:0;&quot;><iframe src=&quot;https://www.youtube.com/embed/Ev6J7wFLvtg&quot; style=&quot;position:absolute;top:0;left:0;width:100%;height:100%;border:0;&quot; allowfullscreen></iframe></div>')">Ver Detalles</button>
+    </div>
+</div> -->
+
+<!-- PRODUCTO 15 MÁQUINA CORTADORA DE CABELLO PROFESIONAL -->
+<div class="product-card" data-category="hogar">
+    <div class="product-image-container" onclick="openModal([
+        'assets/img/maquillacortadoracabello/maquinacortadoradecabello.jpeg',
+        'assets/img/maquillacortadoracabello/maquinacortadoradecabello1.jpeg',
+        'assets/img/maquillacortadoracabello/maquinacortadoradecabello2.jpeg'
+    ], 'Máquina Cortadora de Cabello Profesional – 9 Piezas', 59900, '¿Buscas un corte de cabello impecable, profesional y con la máxima precisión desde casa o tu negocio? Lleva la experiencia de barbería a otro nivel. Cuenta con un <b>motor potente de alto rendimiento</b>, <b>corte preciso y uniforme</b>, y una <b>palanca ajustable para diferentes estilos y degradados</b>. Su <b>diseño ergonómico profesional</b> y su <b>uso continuo con cable garantizan mayor potencia y estabilidad</b> en cada pasada.<br><br><b>Incluye 9 piezas completas:</b> Máquina profesional, 4 peines guía, peine de barbería, aceite lubricante, cepillo de limpieza, protector de cuchilla y manual de uso.<br><br><b>¡Consigue resultados de barbería profesional y luce siempre impecable hoy mismo!</b><br><br><b>Mira el producto en acción:</b><br><br><div style=&quot;position:relative;width:100%;padding-bottom:56.25%;height:0;&quot;><iframe src=&quot;https://www.youtube.com/embed/1YcT36DXblQ&quot; style=&quot;position:absolute;top:0;left:0;width:100%;height:100%;border:0;&quot; allowfullscreen></iframe></div>')">
+        <img src="assets/img/maquillacortadoracabello/maquinacortadoradecabello.jpeg" alt="Máquina Cortadora de Cabello Profesional">
+    </div>
+    <div class="product-info">
+        <h3 class="product-title">MÁQUINA CORTADORA DE CABELLO PROFESIONAL – 9 PIEZAS</h3>
+        <div class="product-price-container">
+            <span class="old-price">COP 69.900</span>
+            <span class="product-price">COP 59.900</span>
+        </div>
+        <button class="btn-details" onclick="openModal([
+            'assets/img/maquillacortadoracabello/maquinacortadoradecabello.jpeg',
+            'assets/img/maquillacortadoracabello/maquinacortadoradecabello1.jpeg',
+            'assets/img/maquillacortadoracabello/maquinacortadoradecabello2.jpeg'
+        ], 'Máquina Cortadora de Cabello Profesional – 9 Piezas', 59900, '¿Buscas un corte de cabello impecable, profesional y con la máxima precisión desde casa o tu negocio? Lleva la experiencia de barbería a otro nivel. Cuenta con un <b>motor potente de alto rendimiento</b>, <b>corte preciso y uniforme</b>, y una <b>palanca ajustable para diferentes estilos y degradados</b>. Su <b>diseño ergonómico profesional</b> y su <b>uso continuo con cable garantizan mayor potencia y estabilidad</b> en cada pasada.<br><br><b>Incluye 9 piezas completas:</b> Máquina profesional, 4 peines guía, peine de barbería, aceite lubricante, cepillo de limpieza, protector de cuchilla y manual de uso.<br><br><b>¡Consigue resultados de barbería profesional y luce siempre impecable hoy mismo!</b><br><br><b>Mira el producto en acción:</b><br><br><div style=&quot;position:relative;width:100%;padding-bottom:56.25%;height:0;&quot;><iframe src=&quot;https://www.youtube.com/embed/1YcT36DXblQ&quot; style=&quot;position:absolute;top:0;left:0;width:100%;height:100%;border:0;&quot; allowfullscreen></iframe></div>')">Ver Detalles</button>
+    </div>
+</div>
+
+<!-- PRODUCTO 16 MINI LAVADORA PORTÁTIL -->
+<div class="product-card" data-category="hogar">
+    <div class="product-image-container" onclick="openModal([
+      'assets/img/minilavadora/minilavadora.jpeg',
+            'assets/img/minilavadora/minilavadora1.jpeg',
+            'assets/img/minilavadora/minilavadora2.jpeg',
+            'assets/img/minilavadora/minilavadora3.jpeg'
+    ], 'Mini Lavadora Portátil de Turbina Ultrasónica', 24900, '¿Cansada/o de lavar a mano las prendas pequeñas o de complicarte en tus viajes y espacios reducidos? Descubre la increíble mini lavadora portátil de turbina ultrasónica. <br><br><b>Tecnología de limpieza:</b> Utiliza una combinación de turbina y vibración ultrasónica para una limpieza profunda.<br><b>Portabilidad:</b> Es compacta, ligera y alimentada por USB, ideal para viajes, campamentos o apartamentos pequeños.<br><b>Uso específico:</b> Diseñada para lavar artículos pequeños y ligeros como ropa interior, calcetines, toallas o ropa de bebé.<br><b>Funcionamiento:</b> Funciona en un recipiente con agua y cuenta con ciclos automáticos de 30 minutos.<br><b>Seguridad:</b> Opera con bajo voltaje (DC 5V) para mayor seguridad. ✨💫⚡️<br><br><b>¡Facilita tu día a día y lava con máxima practicidad dondequiera que estés!</b><br><br><b>Mira el producto en acción:</b><br><br><div style=&quot;position:relative;width:100%;padding-bottom:56.25%;height:0;&quot;><iframe src=&quot;https://www.youtube.com/embed/3k_bCjCvKQw&quot; style=&quot;position:absolute;top:0;left:0;width:100%;height:100%;border:0;&quot; allowfullscreen></iframe></div>')">
+        <img src="assets/img/minilavadora/minilavadora.jpeg" alt="Mini Lavadora Portátil">
+    </div>
+    <div class="product-info">
+        <h3 class="product-title">MINI LAVADORA PORTÁTIL DE TURBINA ULTRASÓNICA</h3>
+        <div class="product-price-container">
+            <span class="old-price">COP 45.000</span>
+            <span class="product-price">COP 24.900</span>
+        </div>
+        <button class="btn-details" onclick="openModal([
+            'assets/img/minilavadora/minilavadora.jpeg',
+            'assets/img/minilavadora/minilavadora1.jpeg',
+            'assets/img/minilavadora/minilavadora2.jpeg',
+            'assets/img/minilavadora/minilavadora3.jpeg'
+           
+        ], 'Mini Lavadora Portátil de Turbina Ultrasónica', 24900, '¿Cansada/o de lavar a mano las prendas pequeñas o de complicarte en tus viajes y espacios reducidos? Descubre la increíble mini lavadora portátil de turbina ultrasónica. <br><br><b>Tecnología de limpieza:</b> Utiliza una combinación de turbina y vibración ultrasónica para una limpieza profunda.<br><b>Portabilidad:</b> Es compacta, ligera y alimentada por USB, ideal para viajes, campamentos o apartamentos pequeños.<br><b>Uso específico:</b> Diseñada para lavar artículos pequeños y ligeros como ropa interior, calcetines, toallas o ropa de bebé.<br><b>Funcionamiento:</b> Funciona en un recipiente con agua y cuenta con ciclos automáticos de 30 minutos.<br><b>Seguridad:</b> Opera con bajo voltaje (DC 5V) para mayor seguridad. ✨💫⚡️<br><br><b>¡Facilita tu día a día y lava con máxima practicidad dondequiera que estés!</b><br><br><b>Mira el producto en acción:</b><br><br><div style=&quot;position:relative;width:100%;padding-bottom:56.25%;height:0;&quot;><iframe src=&quot;https://www.youtube.com/embed/3k_bCjCvKQw&quot; style=&quot;position:absolute;top:0;left:0;width:100%;height:100%;border:0;&quot; allowfullscreen></iframe></div>')">Ver Detalles</button>
+    </div>
+</div>
+
+
+    </main>
+   
+
+    <!-- Modal de Detalles -->
+    <div class="modal-overlay" id="productModal">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModal()">&times;</button>
+            <div class="modal-gallery">
+                <div class="modal-main-image-container">
+                    <img id="modalImage" src="" alt="Producto">
+                </div>
+                <div class="carousel-dots" id="carouselDots"></div>
+            </div>
+            <div class="modal-body">
+                <h2 class="modal-title-text" id="modalTitle">Título</h2>
+                <div class="modal-price-text" id="modalPrice">COP 0</div>
+                <p id="modalDesc" style="font-size: 0.85rem; color: #555; line-height: 1.4;"></p>
+                
+                <div class="modal-footer">
+                    <div class="quantity-selector">
+                        <button onclick="changeQty(-1)">-</button>
+                        <span id="qtyValue">1</span>
+                        <button onclick="changeQty(1)">+</button>
+                    </div>
+                    <button class="btn-add-cart" onclick="addToCartFromModal()">Añadir al Carrito</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Panel Lateral del Carrito -->
+    <div class="cart-drawer" id="cartDrawer">
+        <div class="cart-header">
+            <h3>Tu Carrito de Compras</h3>
+            <button class="modal-close" style="position:static;" onclick="toggleCart()">&times;</button>
+        </div>
+        <div class="cart-body" id="cartItemsContainer">
+            <p style="color: #777; text-align: center; margin-top: 20px;">Tu carrito está vacío.</p>
+        </div>
+        <div class="cart-footer">
+            <div class="cart-total">
+                <span>Total:</span>
+                <span id="cartTotalPrice">COP 0</span>
+            </div>
+            <a href="#" id="whatsappCheckoutBtn" target="_blank" class="btn-whatsapp-checkout" onclick="sendWhatsAppOrder()">Enviar pedido por WhatsApp 📱</a>
+        </div>
+    </div>
+
+    <!-- SECCIÓN DE TESTIMONIOS / RESEÑAS DE CLIENTES -->
+<section class="store-testimonials">
+    <div class="testimonials-container">
+        <h2 class="testimonials-heading">LO QUE DICEN NUESTROS CLIENTES</h2>
+        <div class="rating-badge-main">
+            <span class="stars-gold">★★★★★</span>
+            <span class="rating-score">4.9 / 5.0 (Clientes Satisfechos en Colombia)</span>
+        </div>
+
+        <div class="testimonials-grid">
+            <!-- Testimonio 1 -->
+            <div class="testimonial-card">
+                <div class="testimonial-stars">★★★★★</div>
+                <p class="testimonial-text">"El tapete para arena de gatos superó totalmente mis expectativas. Llegó super rápido a Manizales y la atención por WhatsApp fue excelente. ¡Recomendado 100%!"</p>
+                <span class="testimonial-author">— Carolina G.</span>
+            </div>
+
+            <!-- Testimonio 2 -->
+            <div class="testimonial-card">
+                <div class="testimonial-stars">★★★★★</div>
+                <p class="testimonial-text">"Compré la tablet mágica para mi hijo y le encantó. Excelente calidad y el proceso de compra fue muy fácil y seguro. Volveré a comprar sin duda."</p>
+                <span class="testimonial-author">— Andrés M.</span>
+            </div>
+
+            <!-- Testimonio 3 -->
+            <div class="testimonial-card">
+                <div class="testimonial-stars">★★★★★</div>
+                <p class="testimonial-text">"Me encantó el rodillo quitamotas, es súper práctico y cumple lo que promete. Muy buena tienda y muy atentos con los envíos."</p>
+                <span class="testimonial-author">— Marcela R.</span>
+            </div>
+        </div>
+    </div>
+</section>
+
+    <!-- FOOTER / PIE DE PÁGINA CON NORMATIVA COLOMBIANA -->
+<footer class="store-footer">
+    <div class="footer-container">
+        <p class="footer-copy">&copy; 2026 SANPLEI. Todos los derechos reservados. Manizales, Caldas, Colombia.</p>
+        <p class="footer-copy" style="font-size: 0.75rem; color: #ffffff; opacity: 0.9;">
+            Contacto: <a href="mailto:contacto@sanplei.com" style="color: #fff; text-decoration: underline;">contacto@sanplei.com</a> | Ventas: <a href="mailto:ventas@sanplei.com" style="color: #fff; text-decoration: underline;">ventas@sanplei.com</a>
+        </p>
+        <div class="footer-links">
+            <a href="javascript:void(0)" onclick="openLegalModal('terminos')">Términos y Condiciones</a>
+            <span class="separator">•</span>
+            <a href="javascript:void(0)" onclick="openLegalModal('privacidad')">Política de Privacidad (Habeas Data)</a>
+            <span class="separator">•</span>
+            <a href="javascript:void(0)" onclick="openLegalModal('legal')">Garantías y Ley 1480</a>
+        </div>
+    </div>
+</footer>
+
+<!-- MODAL LEGAL / POLÍTICAS -->
+<div class="modal-overlay" id="legalModal">
+    <div class="modal-content" style="max-width: 600px;">
+        <button class="modal-close" onclick="closeLegalModal()">&times;</button>
+        <div class="modal-body" style="padding: 25px;">
+            <h2 class="modal-title-text" id="legalTitle" style="color: #0F2C59; margin-bottom: 12px; font-size: 1.1rem;">Título</h2>
+            <div id="legalBody" style="font-size: 0.85rem; color: #444343; line-height: 1.6; max-height: 60vh; overflow-y: auto; text-align: left;"></div>
+        </div>
+    </div>
+</div>
+
+    <script src="script.js"></script>
+</body>
+</html>
